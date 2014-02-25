@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Entwicklertoolz</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Entwicklertools</h1>
+					<h3>From the cradle to the grave</h3>
+					<p>
+						<small>Ingo Pfennigstorf, 25. Februar 2014</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Aus grauer Vorzeit</h3>
+					<img src="/images/vorfuenfjahren.png" />
+				</section>
+
+				<section data-background="/images/toobusy.png"></section>
+				<section>
+					<h1>Workflow</h1>
+				</section>
+				<section>
+					<section>
+						<h1>Im Anfang war das Wort …</h1>
+					</section>
+					<section>
+						<p><blockquote>[ADWD-861] Als Benutzer möchte ich eine übersichtliche Darstellung der Stecker auf der Karte, wenn mehrere Treffer auf einem Punkt liegen</blockquote></p>
+						<p style="text-align: right"><small>Daniel Beucke</small></p>
+					</section>
+					<section>
+						<h2>Issue Management</h2>
+					</section>
+					<section>
+						<img src="images/jira-logo.png" />
+					</section>
+					<section>
+						<iframe width="100%" height="500px" src="https://pm.sub.uni-goettingen.de/sr/jira.issueviews:searchrequest-fullcontent/temp/SearchRequest.html?jqlQuery=project+%3D+ADWD+AND+fixVersion+in+%28%22Werkzeugmodus+Teil+I%22%2C+%22Werkzeugmodus+Teil+II%22%29+AND+component+%3D+%22Germania+Sacra%22+AND+issuekey%3D+ADWD-861+ORDER+BY+Rank+ASC&tempMax=1000"></iframe>
+						<aside class="notes">
+							images/jira-issue.png
+						</aside>
+					</section>
+					<section>
+						<img src="images/jira-board.png" />
+					</section>
+					<section>
+						<img src="images/jira-issue-detail.png" alt=""/>
+					</section>
+				</section>
+
+			<section>
+				<section>
+				<h2>Versionskontrolle</h2>
+				</section>
+				<section>
+					<img src="/images/git-logo.png" style="border:none; background: none; box-shadow: none" />
+				</section>
+				<section>
+					<h2>Workflow</h2>
+					<img src="/images/git-workflow.png" style="border:none; background: none"/>
+				</section>
+				<section data-background="images/Octocat.png"></section>
+				<section data-background="images/Octocat.png">
+					<h2>Github</h2>
+				</section>
+				<section data-background="images/Octocat.png">
+					<img src="images/github-subugoe.png" />
+				</section>
+				<section>
+					<h2>Commit Messages</h2>
+					<ul>
+						<li>Englisch</li>
+						<li>Jira Issue ID angeben (ADWD-902)</li>
+					</ul>
+				</section>
+				<section>
+					<p>
+						<pre><code>git commit -am "Fixed map display on mobile devices (ADWD-902)"</code></pre>
+					</p>
+				</section>
+				<section>
+					<pre><code>[BUGFIX] Short summary of changes introduced by this patch
+
+More detailed explanatory text, if necessary.  Wrap it to 74 characters.
+The first line is treated as the subject of the commit message and
+the rest of the text as the body.  The blank line separating the
+subject from the body is critical (unless you omit the body entirely);
+tools like rebase can get confused if you run the two together.
+
+Help others to understand what you did (Motivation for the change?
+Whats the difference to the previous version?), but keep it simple.
+
+* Bullet points are okay, too
+* An asterisk is used for the bullet, it can be preceded by a single
+  space. This format is rendered correctly by Forge (redmine)
+* Use a hanging indent
+
+Resolves: ADWD-902</code></pre>
+					<p><small><a href="http://wiki.typo3.org/CommitMessage_Format_(Git)">http://wiki.typo3.org/CommitMessage_Format_(Git)</a></small></p>
+				</section>
+				<section data-background="images/Octocat.png">
+					<img src="images/github-tmpl-adw.png" />
+				</section>
+				<section>
+					<img src="images/jira-commits.png" />
+				</section>
+			</section>
+
+		<section>
+			<section>
+				<h1>Continuous Delivery</h1>
+			</section>
+			<section>
+				<blockquote cite="http://martinfowler.com/articles/continuousIntegration.html">
+					Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily - leading to multiple integrations per day. Each integration is verified by an automated build (including test) to detect integration errors as quickly as possible.
+				</blockquote>
+				<p><small><a href="http://martinfowler.com/articles/continuousIntegration.html">http://martinfowler.com/articles/continuousIntegration.html</a></small></p>
+			</section>
+			<section>
+				<h2>Aus grauer Vorzeit</h2>
+				<img src="images/jira-alte-versionen.png" />
+				<aside class="notes">
+					Monolithische Architektur, Subversion, Angst vor Releases, viel Handarbeit, Fehler
+				</aside>
+			</section>
+			<section>
+				<img src="/images/automate-all-the-things.png" />
+			</section>
+			<section>
+				<h2>Definierte Buildprozesse</h2>
+				<ul>
+					<li>Ant
+						<ul>
+							<li><a href="https://github.com/subugoe/Salvador">https://github.com/subugoe/Salvador</a></li>
+							<li><a href="https://github.com/subugoe/nkwsubfeprojects/blob/master/build.xml">https://github.com/subugoe/nkwsubfeprojects/blob/master/build.xml</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<img src="images/jenkins-logo.png" />
+			</section>
+			<section data-background="images/jenkins-all-jobs.png">
+			</section>
+			<section>
+				<img src="images/jenkins-build.png" alt=""/>
+				<aside class="notes">
+					Wenn git commit, dann build -> Integration auf Entsprechenden Server
+				</aside>
+			</section>
+			<section>
+				<h3>Maven Builds</h3>
+				<img src="images/jenkins-ocr.png" alt=""/>
+			</section>
+			<section>
+				<h3>Codequalität</h3>
+				<img src="images/jenkins-codequalitaet.png" alt=""/>
+			</section>
+			<section data-background="/images/statusdisplay.jpg">
+				<h3>Sichtbarkeit</h3>
+				<iframe width="100%" height="400px" src="http://jenkins.tc.sub.uni-goettingen.de/jenkins//plugin/jenkinswalldisplay/walldisplay.html?viewName=Alle&jenkinsUrl=http%3A%2F%2Fjenkins.tc.sub.uni-goettingen.de%2Fjenkins%2F"></iframe>
+			</section>
+			<section>
+				<h3>Sichtbarkeit</h3>
+				<img src="images/jabberkins.png" />
+			</section>
+			<section>
+				<h3>Jabber</h3>
+				<ul>
+					<li>Instant Messenger</li>
+					<li>Gruppenchat</li>
+					<li>Jenkins Bot</li>
+					<li>Jeder Mitarbeiter hat automatisch einen Account (GWDG)</li>
+					<ul><li><a href="http://wiki.gwdg.de/index.php/Jabber">http://wiki.gwdg.de/index.php/Jabber</a></li></ul>
+
+				</ul>
+			</section>
+		</section>
+					<section>
+						<h1>Lokale Entwicklung</h1>
+						<aside class="notes">
+							Auf dem eigenen Rechner
+						</aside>
+					</section>
+					<section>
+						<section>
+							<h1>IDE</h1>
+						</section>
+						<section>
+							<h2>IDE</h2>
+							<p>Integrated
+
+								Development
+
+								Environment</p>
+						</section>
+						<section>
+							<h3>IDE</h3>
+							<ul>
+								<li>Code Completion</li>
+								<li>Code Highlighting</li>
+								<li>Debugging</li>
+								<li>Projektverwaltung</li>
+								<li>Codestandards</li>
+							</ul>
+							<aside class="notes">
+								Codequalität
+							</aside>
+						</section>
+						<section>
+							<img src="images/eclipse_logo_colour.png" />
+						</section>
+						<section>
+							<img src="images/netbeans-logo.png" width="60%"/>
+						</section>
+						<section>
+							<img src="images/logo-idea.png" />
+						</section>
+						<section>
+							<img src="images/phpstorm-logo.png" />
+						</section>
+						<section data-background="/images/ide.png"></section>
+						<section>
+							<h2>Codestandards / Einstellungen</h2>
+							<p><a href="https://github.com/subugoe/devsettings/blob/master/ide/PhpStorm/settings.jar">https://github.com/subugoe/devsettings/blob/master/ide/PhpStorm/settings.jar</a></p>
+						</section>
+					</section>
+					<section>
+						<section>
+							<h1>Desktop Virtualisierung</h1>
+						</section>
+						<section>
+							<h2>Lokale Entwicklungsumgebung</h2>
+							<ul>
+								<li>Langwieriges Setup</li>
+								<li>Entwicklungsumgebung !== Live Umgebung</li>
+								<li>Umgebung des Entwicklungsrechners</li>
+								<ul>
+									<li>Datenbankserver</li>
+									<li>Java, PHP, Node, ... Version</li>
+								</ul>
+								<li>Keine einheitliche Umgebung im Team</li>
+							</ul>
+							<aside class="notes">
+								Works on my machine,
+								Warum ist das auf meinem Rechner jetzt so komisch?
+							</aside>
+						</section>
+						<section>
+							<h2>Arbeiten mit virtuellen Maschinen</h2>
+							<ul>
+								<li>Unabhängigkeit</li>
+								<li>n isolierte Systeme</li>
+								<li>Einheitliche Entwicklungs- / Testumgebung</li>
+								<li>Betriebsnahe bis -identische Umgebung</li>
+								<li>Schnelle und wiederholbare Inbetriebnahme</li>
+							</ul>
+							<aside class="notes">
+								Man ist unabhängig vom Gastsystem
+							</aside>
+						</section>
+
+						<section>
+							<h2>Lösungen</h2>
+						</section>
+						<section>
+							<img src="images/logo-vmware.png" />
+							<aside class="notes">
+								Kostet, aber haben wir auf den GWDG Servern auch im Einsatz.
+							</aside>
+						</section>
+						<section>
+							<img src="images/logo-virtualbox.png" />
+							<aside class="notes">
+								Kostenlos, open source ...
+							</aside>
+						</section>
+						<section data-background="/images/vagrant-logo.png"></section>
+						<section data-background="/images/vagrant-logo.png"><h2>Vagrant</h2></section>
+						<section>
+							<h2>Vagrant</h2>
+							<ul>
+								<li>Virtuelle Maschinen wiederholbar ausstatten (provisioning)</li>
+								<ul>
+									<li>Grundlage: Vagrantfile</li>
+									<li>Chef, Puppet, Ansible, Shell</li>
+								</ul>
+								<li>VMware, VirtualBox, AWS</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Vagrant Quickstart</h2>
+							<pre><code>vagrant init
+vagrant up</code></pre>
+						</section>
+						<section>
+							<pre><code style="overflow: hidden"> box          manages boxes: installation, removal, etc.
+ destroy      stops and deletes all traces of the vagrant machine
+ halt         stops the vagrant machine
+ help         shows the help for a subcommand
+ init         initializes a new Vagrant environment by creating a Vagrantfile
+ package      packages a running vagrant environment into a box
+ plugin       manages plugins: install, uninstall, update, etc.
+ provision    provisions the vagrant machine
+ reload       restarts vagrant machine, loads new Vagrantfile configuration
+ resume       resume a suspended vagrant machine
+ ssh          connects to machine via SSH
+ ssh-config   outputs OpenSSH valid configuration to connect to the machine
+ status       outputs status of the vagrant machine
+ suspend      suspends the machine
+ up           starts and provisions the vagrant environment
+ vbguest</code></pre>
+						</section>
+						<section>
+							<h2>Vagrantfile</h2>
+							<pre><code>
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "base"
+end
+							</code></pre>
+							<aside class="notes">
+								Bereinigt um Kommentare,
+								Macht erstmal nichts, holt nur die base virtualbox
+							</aside>
+						</section>
+						<section>
+							<h2>Production Vagrantfile</h2>
+							<pre><code>Vagrant::Config.run do |config|
+  config.vm.box = "sub-base"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.network :hostonly, "192.168.33.18"
+
+  config.vm.share_folder "v-data", "/home/vagrant/archaeo18", "."
+
+  config.vm.provision :chef_solo do |chef|
+     chef.cookbooks_path = "./cookbooks"
+     chef.add_recipe "archaeo18"
+  end
+end
+Vagrant.configure("2") do |config|
+  config.vm.define :archaeo18 do |archaeo18|
+    archaeo18.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 1024]
+    end
+  end
+end
+							</code></pre>
+						</section>
+						<section>
+							<h2>Provisioning</h2>
+						</section>
+						<section data-background="#1c1e20">
+							<p><img src="images/chef-logo.svg" width="300px"/></p>
+							<aside class="notes">
+								Basiert auf Cookbooks, Ruby. Chef solo, chef server
+							</aside>
+						</section>
+						<section>
+							<pre><code>execute "apt-get update"
+
+packages = ["openjdk-7-jdk", "ant", "libjaxp1.3", "htop", "git", "vim"]
+
+packages.each do |p|
+	package p
+end
+
+# make a small shell script to start archaeo18
+cookbook_file "/usr/bin/archaeo18" do
+	source "archaeo18"
+	mode "0755"
+end
+
+# add archaeo18 startup to upstart
+cookbook_file "/etc/init/archaeo18.conf" do
+	source "archaeo18.conf"
+	mode "0644"
+end
+
+execute "initctl reload-configuration"
+execute "start archaeo18"</code></pre>
+							<small><a href="https://github.com/subugoe/archaeo18/blob/master/cookbooks/archaeo18/recipes/default.rb">https://github.com/subugoe/archaeo18/blob/master/cookbooks/archaeo18/recipes/default.rb</a></small>
+						</section>
+						<section>
+							<img src="images/puppet-logo.png" />
+							<aside class="notes">
+								Puppet
+							</aside>
+						</section>
+						<section>
+							<pre><code># ---------------------------------------------------
+# Install MySQL
+# ---------------------------------------------------
+
+package { "mysql-server":
+	ensure => present,
+	require => Exec['apt-get update final'],
+}
+
+service { 'mysql':
+	ensure => running,
+	hasstatus => true,
+	hasrestart => true,
+	enable => true,
+	require => Package["mysql-server"],
+}
+
+exec { 'mysql-root-password':
+	command => '/usr/bin/mysqladmin -u root password vagrant',
+	onlyif => '/usr/bin/mysql -u root mysql -e "show databases;"',
+	require => Package['mysql-server'],
+}</code></pre>
+							<small><a href="https://github.com/ipf/VagrantTYPO3/blob/master/manifests/default.pp">https://github.com/ipf/VagrantTYPO3/blob/master/manifests/default.pp</a></small>
+						</section>
+						<section>
+							<pre><code># ---------------------------------------------------
+# Install Cache Servers
+# ---------------------------------------------------
+
+package { 'memcached':
+	ensure => installed,
+	require => Exec['apt-get update final'],
+}
+
+package { 'redis-server':
+	ensure => installed,
+	require => Exec['apt-get update final'],
+}
+
+
+# ---------------------------------------------------
+# Install PHP 5.5.x with FPM
+# ---------------------------------------------------
+
+package { 'php5-fpm':
+	ensure => installed,
+	require => Exec['apt-get update final'],
+}</code></pre>
+							<small><a href="https://github.com/ipf/VagrantTYPO3/blob/master/manifests/default.pp">https://github.com/ipf/VagrantTYPO3/blob/master/manifests/default.pp</a></small>
+						</section>
+						<section>
+							<h3>Weitere Provisioning Möglichkeiten</h3>
+							<ul>
+								<li><a href="http://docs.vagrantup.com/v2/provisioning/shell.html">Shell</a></li>
+								<li><a href="http://www.ansible.com/home">Ansible</a></li>
+							</ul>
+						</section>
+						<section>
+							<img src="/images/gwdg-puppet.png" />
+						</section>
+						<section>
+							<h3>Vagrant up!</h3>
+							<video id="vagrantup" src="images/vagrantup.webm" controls></video>
+						</section>
+						<section>
+							<p><a href="http://www.vagrantbox.es">http://www.vagrantbox.es</a></p>
+						</section>
+						<section>
+							<p><a href="http://www.vagrantup.com">http://www.vagrantup.com</a></p>
+						</section>
+					</section>
+					<section>
+						<section>
+						<h2>Toolbox</h2>
+						</section>
+						<section>
+							<h3>git flow</h3>
+							<pre><code data-trim contenteditable>
+					$ git flow feature start find-new-director_SUB-2013
+$ git flow feature finish find-new-director_SUB-2013
+				   </code></pre>
+						</section>
+						<section>
+							<h3>oh-my-zsh</h3>
+							<img src="images/oh-my-zsh.png" alt=""/>
+						</section>
+						<section>
+							<h2>Frontend Werkzeuge</h2>
+							<ul>
+								<li>CSS Präprozessoren
+									<ul><li>
+										Sass / Compass
+									</li></ul>
+								</li>
+								<li>JavaScript Generatoren
+								<ul>
+									<li>CoffeeScript</li>
+									<li>Dart</li>
+								</ul>
+								</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Frontend Werkzeuge</h2>
+							<ul>
+								<li>Build Tools
+									<ul><li>
+										Grunt / Yeoman
+									</li></ul>
+								</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Frontend Werkzeuge</h2>
+							<ul>
+								<li>Abhängigkeitsmanagement
+									<ul>
+										<li>Bower</li>
+										<li>npm</li>
+										<li>rubygems</li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</section>
+				<section>
+					<section>
+						<h1>Integration vons Ganze</h1>
+					</section>
+					<section>
+						<h2>Build Pipeline</h2>
+						<img src="images/Continuous_Delivery_process_diagram.png" />
+					</section>
+					<section>
+						<img src="images/big_picture.png" width="80%" />
+					</section>
+					<section>
+						<h3>In der IDE</h3>
+					</section>
+					<section>
+						<img src="/images/keep-calm-and-automate-all-the-things.png" />
+					</section>
+				</section>
+				<section>
+					<h1>Fragen?</h1>
+				</section>
+				<section>
+					<h2>Kontakt</h2>
+					<p><small><a href="pfennigstorf@sub.uni-goettingen.de">pfennigstorf@sub.uni-goettingen.de</a></small></p>
+					<p><small>ipfenni1@jabber.gwdg.de</small></p>
+
+					<aside class="notes">
+						Präsentation lief in einer Vagrant Box
+					</aside>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

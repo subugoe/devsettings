@@ -99,9 +99,9 @@ title: Vagrant TYPO3
 					<div id="t3ver-[[$index]]" class="panel-collapse collapse">
 						<div class="panel-body">
 							<ul ng-repeat="minor in major.releases" class="list-unstyled">
-								<li>
+								<li><label>
 									<input name="t3version" type="radio" ng-model="formData.selectedVersion" value="[[minor.version]]"/>
-									[[minor.version]]
+									[[minor.version]]</label>
 								</li>
 							</ul>
 						</div>

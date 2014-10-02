@@ -1,0 +1,101 @@
+---
+layout: default
+title: Vagrant TYPO3
+---
+
+<div ng-controller="mainController">
+	<div class="col-md-7">
+		<div class="row">
+			<form class="form-horizontal" role="form">
+				<div class="input-group">
+					<label class="col-sm-3 control-label">Hostname: </label>
+
+					<div class="col-sm-8">
+						<input class="form-control" type="text" ng-model="satan"/>
+					</div>
+					.dev
+
+				</div>
+			</form>
+		</div>
+		<div class="row">
+			<h2>Installation</h2>
+			<p>Download vagrant from <a href="http://www.vagrantup.com/downloads.html">vagrantup.com</a>
+				and install the Application</p>
+
+			<p>Clone this good default vagrant machine: <br/>
+				<code>git clone git://github.com/swiftlizard/VagrantTYPO3.git ~/repo/VagrantTYPO3</code>
+			</p>
+			<p>
+				<code>cd ~/repo/VagrantTYPO3</code>
+				<br/>
+				<code>vagrant up</code>
+			</p>
+
+			<h2>TYPO3 Installation</h2>
+			<p ng-if="!satan">Enter a desired hostname above</p>
+
+			<div class="generated" ng-if="satan">
+				<code>sudo sh -c 'echo "192.168.50.50 [[satan]].dev" >> /etc/hosts'</code>
+				<br/>
+				<code>export NEW_DIR=~/repo/VagrantTYPO3/vHosts/[[satan]]/Web</code>
+				<br/>
+				<code>mkdir -p $NEW_DIR && cd $NEW_DIR</code>
+				<br/>
+				<code>wget "http://get.typo3.org/[[formData.selectedVersion]]" -O typo3_src.tgz</code>
+				<br/>
+				<code>tar xvzf typo3_src.tgz</code>
+				<br/>
+				<code>mv typo3_src-[[formData.selectedVersion]] typo3_src</code>
+				<br/>
+				<code>ln -s typo3_src/typo3 typo3</code>
+				<br/>
+				<code>ln -s typo3_src/index.php index.php</code>
+				<br/>
+				<code>touch FIRST_INSTALL</code>
+				<br/>
+				Open in Browser: <a href="http://[[satan]].dev" target="_blank">[[satan]].dev</a>
+
+				<br/>Database username: root, password: vagrant
+				<br/>
+				create new database
+				<br/>Database name: [[satan]]
+				<br/>
+				open typo3conf/LocalConfiguration.php and add
+				<br/>
+				<code>
+					trustedHostsPattern => '[[satan]].dev'
+
+				</code>
+				<br/>
+				in section 'sys'
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 col-md-offset-1">
+		<div class="row">
+			<h3>TYPO3 Version </h3>
+
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default" ng-repeat="(version, major) in t3vers" ng-if="major.active">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#t3ver-[[$index]]">
+								[[version]]</a>
+						</h4>
+					</div>
+					<div id="t3ver-[[$index]]" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul ng-repeat="minor in major.releases" class="list-unstyled">
+								<li>
+									<input name="t3version" type="radio" ng-model="formData.selectedVersion" value="[[minor.version]]"/>
+									[[minor.version]]
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

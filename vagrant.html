@@ -7,20 +7,33 @@ title: Vagrant TYPO3
 	<div class="col-md-7">
 		<div class="row">
 			<form class="form-horizontal" role="form">
-				<div class="input-group">
-					<label class="col-sm-3 control-label">Hostname: </label>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="appendedtext">Hostname:</label>
 
-					<div class="col-sm-8">
-						<input class="form-control" type="text" ng-model="satan"/>
+					<div class="col-md-4">
+						<div class="input-group">
+							<input id="appendedtext" name="appendedtext" class="form-control" ng-model="satan" placeholder="ipoa" type="text">
+							<span class="input-group-addon">.dev</span>
+						</div>
+
 					</div>
-					.dev
-
 				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="textinput">Directory:</label>
+
+					<div class="col-md-4">
+						<input id="textinput" name="textinput" type="text" ng-model="localDirectory" class="form-control input-md">
+					</div>
+				</div>
+
+
 			</form>
 		</div>
 		<div class="row">
 			<h2>Installation</h2>
-			<p>Download and install Virtualbox from <a href="https://www.virtualbox.org/wiki/Downloads">virtualbox.org</a>.</p>
+			<p>Download and install Virtualbox from
+				<a href="https://www.virtualbox.org/wiki/Downloads">virtualbox.org</a>.</p>
 			<p>Download vagrant from <a href="http://www.vagrantup.com/downloads.html">vagrantup.com</a>
 				and install the Application.</p>
 

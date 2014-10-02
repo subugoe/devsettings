@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 @import "bootstrap/stylesheets/bootstrap";
-
+$main-color: #1a3771;
 .page-content {
 	@extend .container;
 }
@@ -13,11 +13,27 @@
 }
 
 .navbar {
-	background: #1a3771;
+	background: $main-color;
 	a {
 		color: white;
 		&:hover {
 			background-color: #2a6496!important;
+		}
+	}
+}
+
+footer {
+	border-top: 1px solid $main-color;
+	&.site-footer {
+		@extend .col-md-12;
+	}
+	.element {
+		@extend .col-md-4;
+		ul {
+			@extend .list-group;
+			li {
+				@extend .list-group-item;
+			}
 		}
 	}
 }

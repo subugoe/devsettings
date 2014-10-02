@@ -5,4 +5,5 @@ angular.module('sub').controller('mainController', ($scope, $http) ->
     $scope.t3vers = data
     $scope.formData = {}
     $scope.formData.selectedVersion = data.latest_stable
+		$scope.localDirectory = '~/repo/VagrantTYPO3'
 )

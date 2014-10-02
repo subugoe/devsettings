@@ -20,11 +20,12 @@ title: Vagrant TYPO3
 		</div>
 		<div class="row">
 			<h2>Installation</h2>
+			<p>Download and install Virtualbox from <a href="https://www.virtualbox.org/wiki/Downloads">virtualbox.org</a>.</p>
 			<p>Download vagrant from <a href="http://www.vagrantup.com/downloads.html">vagrantup.com</a>
-				and install the Application</p>
+				and install the Application.</p>
 
 			<p>Clone this good default vagrant machine: <br/>
-				<code>git clone git://github.com/swiftlizard/VagrantTYPO3.git ~/repo/VagrantTYPO3</code>
+				<code>git clone git://github.com/swiftlizard/VagrantTYPO3.git [[localDirectory]]</code>
 			</p>
 			<p>
 				<code>cd ~/repo/VagrantTYPO3</code>
@@ -38,7 +39,7 @@ title: Vagrant TYPO3
 			<div class="generated" ng-if="satan">
 				<code>sudo sh -c 'echo "192.168.50.50 [[satan]].dev" >> /etc/hosts'</code>
 				<br/>
-				<code>export NEW_DIR=~/repo/VagrantTYPO3/vHosts/[[satan]]/Web</code>
+				<code>export NEW_DIR=[[localDirectory]]/vHosts/[[satan]]/Web</code>
 				<br/>
 				<code>mkdir -p $NEW_DIR && cd $NEW_DIR</code>
 				<br/>
@@ -59,7 +60,7 @@ title: Vagrant TYPO3
 				<br/>Database username: root, password: vagrant
 				<br/>
 				create new database
-				<br/>Database name: [[satan]]
+				<br/>Database name: t3_[[satan]]
 				<br/>
 				open typo3conf/LocalConfiguration.php and add
 				<br/>

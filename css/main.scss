@@ -29,6 +29,9 @@ footer {
 	}
 	.element {
 		@extend .col-md-4;
+		h3 {
+			font-size: $font-size-base;
+		}
 		ul {
 			@extend .list-group;
 			li {

@@ -10,6 +10,7 @@ $main-color: #1a3771;
 }
 .wrapper {
 	@extend .col-md-12;
+	min-height: 40em;
 }
 
 .navbar {

@@ -12,7 +12,7 @@ title: Vagrant TYPO3
 
 					<div class="col-md-5">
 						<div class="input-group">
-							<input autofocus id="appendedtext" name="appendedtext" class="form-control" ng-model="satan" placeholder="ipoa" type="text">
+							<input autofocus id="appendedtext" name="appendedtext" class="form-control" ng-model="hostname" placeholder="ipoa" type="text">
 							<span class="input-group-addon">.dev</span>
 						</div>
 
@@ -45,12 +45,12 @@ title: Vagrant TYPO3
 			</p>
 
 			<h2>TYPO3 Installation</h2>
-			<p ng-if="!satan">Enter a desired hostname above</p>
+			<p ng-if="!hostname">Enter a desired hostname above</p>
 			<p>By default the most recent TYPO3 Version ([[t3vers.latest_stable]]) will be installed.</p>
-			<div class="generated" ng-if="satan">
-				<code>sudo sh -c 'echo "192.168.50.50 [[satan]].dev" >> /etc/hosts'</code>
+			<div class="generated" ng-if="hostname">
+				<code>sudo sh -c 'echo "192.168.50.50 [[hostname]].dev" >> /etc/hosts'</code>
 				<br/>
-				<code>export NEW_DIR=[[localDirectory]]/vHosts/[[satan]]/Web</code>
+				<code>export NEW_DIR=[[localDirectory]]/vHosts/[[hostname]]/Web</code>
 				<br/>
 				<code>mkdir -p $NEW_DIR && cd $NEW_DIR</code>
 				<br/>
@@ -66,17 +66,17 @@ title: Vagrant TYPO3
 				<br/>
 				<code>touch FIRST_INSTALL</code>
 				<br/>
-				Open in Browser: <a href="http://[[satan]].dev" target="_blank">[[satan]].dev</a>
+				Open in Browser: <a href="http://[[hostname]].dev" target="_blank">[[hostname]].dev</a>
 
 				<br/>Database username: root, password: vagrant
 				<br/>
 				Create new database
-				<br/>Database name: t3_[[satan]]
+				<br/>Database name: t3_[[hostname]]
 				<br/>
 				Open typo3conf/LocalConfiguration.php and add
 				<br/>
 				<code>
-					trustedHostsPattern => '[[satan]].dev'
+					trustedHostsPattern => '[[hostname]].dev'
 
 				</code>
 				<br/>

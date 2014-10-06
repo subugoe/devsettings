@@ -48,6 +48,7 @@ $main-color: #1a3771;
 
 footer {
 	border-top: 1px solid $main-color;
+	padding-top: 1em;
 	&.site-footer {
 		@extend .col-md-12;
 	}
@@ -60,6 +61,7 @@ footer {
 			@extend .list-group;
 			li {
 				@extend .list-group-item;
+				border: 0;
 			}
 		}
 	}

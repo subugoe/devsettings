@@ -72,6 +72,8 @@ title: Vagrant TYPO3
 
 				<br/>Database username: root, password: vagrant
 				<br/>
+				Use socket based connection
+				<br/>
 				Create new database
 				<br/>Database name: t3_[[hostname| lowercase]]
 				<br/>
@@ -90,7 +92,7 @@ title: Vagrant TYPO3
 		<div class="row">
 			<h3>TYPO3 Version </h3>
 
-			<div class="panel-group" id="accordion">
+			<div class="panel-group t3versions" id="accordion">
 				<div class="panel panel-default" ng-repeat="(version, major) in t3vers" ng-if="major.active">
 					<div class="panel-heading">
 						<h4 class="panel-title">

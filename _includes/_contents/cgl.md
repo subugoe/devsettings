@@ -39,7 +39,11 @@ Das Commit Message Format orientiert sich an dem [Modell](http://tbaggery.com/20
 
 ### Github
 
+[Subugoe](https://github.com/subugoe)
+
 #### Pull Request
+
+[Hinweise](http://blog.ploeh.dk/2015/01/15/10-tips-for-better-pull-requests/)
 
 ## Qualitätskriterien
 

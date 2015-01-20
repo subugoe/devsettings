@@ -21,7 +21,7 @@ Grundsätzlich sind die Einstellungen für Jetbrains IDEs wie PhpStorm oder Idea
 ### Sass
 
 Grundsätzlich wird der Scss Dialekt verwendet und die Guidelines aus den [Sass Guidelines](http://sass-guidelin.es/) verwendet, mit der Ausnahme dass die Einrückung mit Tabs statt Spaces vorgenommen wird.
-Eine Konfiguration für einen Sass Linter ist [hier](https://raw.githubusercontent.com/subugoe/typo3-tmpl_digizeit/master/scss-lint.yml) zu finden
+Eine Konfiguration für einen Sass Linter ist [hier](https://gist.github.com/ipf/38f48f5140da92095bb2) zu finden.
 
 ## Workflow
 

@@ -17,6 +17,15 @@ $main-color: #1a3771;
 		display: inline-block;
 		color: white;
 	}
+	.post,
+	.main {
+		@include make-lg-column(8);
+		@include make-md-column(8);
+	}
+	.sidebar {
+		@include make-lg-column(4);
+		@include make-md-column(4);
+	}
 }
 
 .navbar {

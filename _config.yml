@@ -5,3 +5,10 @@ baseurl: "/devsettings" # the subpath of your site, e.g. /blog/
 url: "http://subugoe.github.io" # the base hostname & protocol for your site
 twitter_username: subugoe
 github_username:  subugoe
+defaults:
+  -
+    scope:
+      path: "blog"
+      type: "posts"
+    values:
+      layout: "post"

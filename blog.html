@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog
+tags: typo3, dokumentation
+---
+
+<div class="home main">
+		{% for post in site.posts %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}} - {{post.date| date_to_string}}</a></h3>
+				</div>
+				<div class="panel-body">
+					{{post.excerpt}}
+					<p><a href="{{post.url | prepend: site.baseurl}}">[mehr ...]</a></p>
+				</div>
+			</div>
+		{% endfor %}
+</div>
+<div class="sidebar">
+	<h3>Einträge</h3>
+	<ul>
+		{% for post in site.posts %}
+			<li><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></li>
+		{% endfor %}
+	</ul>
+</div>
